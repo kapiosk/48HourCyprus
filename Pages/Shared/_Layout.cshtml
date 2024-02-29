@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>48-Hour Cyprus</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+
+<body>
+    <hr />
+    <header>
+        <img src="images/48hr.png" alt="Logo" width="280">
+    </header>
+    <nav>
+        <a href="Index">Home</a>
+        <a href="Donations">Donations</a>
+        <a href="https://www.okak.org.cy/event-of-the-year">2024</a>
+    </nav>
+    <hr />
+    <div class="container">
+        @RenderBody()
+    </div>
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.UtcNow.ToString("yyyy-MM-dd") - 48-Hour Cyprus</p>
+    </footer>
+    @* <script src="~/js/site.js" asp-append-version="true"></script> *@
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
