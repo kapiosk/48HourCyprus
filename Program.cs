@@ -34,10 +34,7 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-app.MapGet("/Generate", () =>
-{
-  app.GenerateStaticContent("src");
-});
+app.MapGet("/Generate", () => app.GenerateStaticContent("src"));
 
 if (args.Contains("generate"))
   app.GenerateStaticContent("src", exitWhenDone: true);
