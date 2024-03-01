@@ -7,8 +7,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IStaticResourcesInfoProvider>(
   new StaticResourcesInfoProvider(
     [
-      new PageResource("/Index"),
-      new PageResource("/Donations"),
+      new PageResource("/index"),
+      new PageResource("/donations"),
       new CssResource("/css/site.css" ),
       new BinResource("/images/48hr.png" ),
       new BinResource("/images/IMG_3984.jpg" ),
