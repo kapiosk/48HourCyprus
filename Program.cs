@@ -17,7 +17,7 @@ builder.Services.AddSingleton<IStaticResourcesInfoProvider>(
       // new BinResource("/favicon.ico" ){ OptimizerType = OptimizerType.Bin },
     ]));
 
-var app = builder.Build();
+await using var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
 {
@@ -42,4 +42,4 @@ app.MapGet("/Generate", () =>
 if (args.Contains("generate"))
   app.GenerateStaticContent("src", exitWhenDone: true);
 
-app.Run();
+await app.RunAsync();
