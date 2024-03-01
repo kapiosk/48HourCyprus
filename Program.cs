@@ -36,7 +36,7 @@ app.MapRazorPages();
 
 if (args.Contains("generate"))
   app.GenerateStaticContent(
-    "Out",
+    "src",
     exitWhenDone: true,
     alwaysDefaultFile: false,
     dontUpdateLinks: false);
