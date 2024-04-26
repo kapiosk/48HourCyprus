@@ -25,7 +25,7 @@ if (!app.Environment.IsDevelopment())
   app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -34,9 +34,9 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-app.MapGet("/Generate", () => app.GenerateStaticContent("src"));
+// app.MapGet("/Generate", () => app.GenerateStaticContent("src"));
 
-if (args.Contains("generate"))
+if (args.Contains("-generate"))
   app.GenerateStaticContent("src", exitWhenDone: true);
 
 await app.RunAsync();
