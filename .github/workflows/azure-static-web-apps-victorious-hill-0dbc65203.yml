@@ -8,7 +8,20 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
-
+  repository_dispatch:
+    types:
+      - webhook
+#https://api.github.com/repos/[USERNAME]/[REPOSITORY]/dispatches
+# const url = 'https://api.github.com/repos/[USERNAME]/[REPOSITORY]/dispatches';
+# const githubPAT = "GITHUB_PAT"; // keep this secret
+# await got.post(url, {
+#   json: {
+#     event_type: 'webhook',
+#   },
+#   headers: {
+#     Authorization: "token " + githubPAT,
+#   },
+# });
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
